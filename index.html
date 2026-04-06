@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OuroBem Benefícios – Descritivo dos Serviços</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --verde: #0d4a3e;
+    --verde-medio: #1a6b5a;
+    --verde-claro: #e1f5ee;
+    --dourado: #c4922a;
+    --dourado-claro: #f5c75b;
+    --dourado-bg: #fdf3dc;
+    --branco: #ffffff;
+    --cinza: #f7f6f2;
+    --cinza-texto: #6b6b6b;
+    --texto: #1a1a1a;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto);
+    background: var(--branco);
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--branco);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+  }
+  .logo img {
+  height: 50px;
+  width: auto;
+  max-height: 60px;
+}
+
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--verde);
+    letter-spacing: -0.5px;
+  }
+
+  .logo-text span { color: var(--dourado-claro); }
+
+  .logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    display: block;
+    margin-top: -4px;
+    text-transform: uppercase;
+  }
+
+  nav a {
+    color: rgba(5, 144, 28, 0.75);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--dourado-claro); }
+
+  /* HERO */
+  .hero {
+    background: var(--verde);
+    color: var(--branco);
+    padding: 5rem 2rem 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: rgba(196, 146, 42, 0.12);
+    top: -200px; left: -100px;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(196, 146, 42, 0.08);
+    bottom: -150px; right: -50px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(196, 146, 42, 0.2);
+    border: 1px solid rgba(196, 146, 42, 0.4);
+    color: var(--dourado-claro);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--dourado-claro);
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 1.25rem 1.75rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-align: left;
+    width: 220px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .hero-card:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(245, 199, 91, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .hero-card-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .hero-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--branco);
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-card p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+    font-weight: 400;
+  }
+
+  /* SECTION COMMON */
+  section {
+    padding: 5rem 2rem;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--verde);
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+    color: var(--cinza-texto);
+    max-width: 560px;
+    margin-bottom: 3rem;
+  }
+
+  /* SERVICE SECTIONS */
+  .service-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 6rem;
+  }
+
+  .service-block.reverse { direction: rtl; }
+  .service-block.reverse > * { direction: ltr; }
+
+  .service-visual {
+    background: var(--verde);
+    border-radius: 24px;
+    padding: 2.5rem;
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-visual::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(196, 146, 42, 0.15);
+    bottom: -100px; right: -80px;
+  }
+
+  .service-visual-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-visual h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-visual p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+    line-height: 1.7;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .tag.gold {
+    background: rgba(196, 146, 42, 0.25);
+    border-color: rgba(196, 146, 42, 0.5);
+    color: var(--dourado-claro);
+  }
+
+  /* INFO CARDS */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .info-card {
+    background: var(--cinza);
+    border-radius: 16px;
+    padding: 1.25rem;
+  }
+
+  .info-card-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cinza-texto);
+    margin-bottom: 0.5rem;
+  }
+
+  .info-card-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--verde);
+  }
+  .info-card-value a {
+  color: var(--verde);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.info-card-value a:hover {
+  text-decoration: underline;
+}
+
+  /* STEP LIST */
+  .step-list {
+    list-style: none;
+    counter-reset: steps;
+  }
+
+  .step-list li {
+    counter-increment: steps;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
+
+  .step-list li::before {
+    content: counter(steps);
+    background: var(--verde);
+    color: var(--branco);
+    font-size: 0.8rem;
+    font-weight: 700;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-list li p {
+    font-size: 0.9rem;
+    color: var(--cinza-texto);
+    line-height: 1.6;
+  }
+
+  /* DETAIL CARDS */
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .detail-card {
+    background: var(--branco);
+    border: 1px solid #e8e5de;
+    border-radius: 20px;
+    padding: 1.5rem;
+  }
+
+  .detail-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .detail-icon {
+    background: var(--verde-claro);
+    color: var(--verde);
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .detail-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--verde);
+  }
+
+  .detail-card p {
+    font-size: 0.85rem;
+    color: var(--cinza-texto);
+    line-height: 1.65;
+  }
+
+  .limit-badge {
+    display: inline-block;
+    background: var(--dourado-bg);
+    color: var(--dourado);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+  }
+
+  .exclusao-list {
+    list-style: none;
+    margin-top: 0.75rem;
+  }
+
+  .exclusao-list li {
+    font-size: 0.8rem;
+    color: var(--cinza-texto);
+    padding: 3px 0 3px 1rem;
+    position: relative;
+  }
+
+  .exclusao-list li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    color: #c0392b;
+    font-weight: 700;
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--cinza);
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .faq-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--verde);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .faq-item {
+    border-top: 1px solid #e0ddd6;
+    padding: 1rem 0;
+  }
+
+  .faq-item:first-of-type { border-top: none; }
+
+  .faq-q {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--verde);
+    margin-bottom: 0.4rem;
+  }
+
+  .faq-a {
+    font-size: 0.85rem;
+    color: var(--cinza-texto);
+    line-height: 1.65;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d4d0c8, transparent);
+    margin: 1rem 0;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--verde);
+    color: var(--branco);
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+
+  .contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--branco);
+  }
+
+  .contact-section p {
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-gold {
+    background: var(--dourado);
+    color: var(--branco);
+  }
+  .btn-gold:hover { background: #b07d1e; transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    color: var(--branco);
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* FOOTER */
+  footer {
+    background: #081f1a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 760px) {
+    .service-block { grid-template-columns: 1fr; gap: 2rem; }
+    .service-block.reverse { direction: ltr; }
+    nav { display: none; }
+    .hero-cards { flex-direction: column; align-items: center; }
+    .hero-card { width: 100%; max-width: 320px; }
+  }
+
+  /* SMOOTH SCROLL */
+  html { scroll-behavior: smooth; }
+
+  /* ANIMATE */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .anim { animation: fadeUp 0.6s ease both; }
+  .anim-2 { animation: fadeUp 0.6s 0.15s ease both; }
+  .anim-3 { animation: fadeUp 0.6s 0.3s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <div>
+    <img src="https://ourobem.com.br/website/img/temporario/header/logo[210x70].png" alt="logo ourobem">
+    </div>
+  </a>
+  <nav>
+    <a href="#clube">Clube de Vantagens</a>
+    <a href="#residencial">Assist. Residencial</a>
+    <a href="#medicamentos">Auxílio Medicamentos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Descritivo dos Serviços</div>
+  <h1 class="anim">Seus <em>benefícios</em><br>em um só lugar</h1>
+  <p class="anim-2">Conheça todos os serviços inclusos no seu plano OuroBem e saiba como utilizá-los.</p>
+  <div class="hero-cards anim-3">
+    <a href="#clube" class="hero-card">
+      <span class="hero-card-icon"></span>
+      <h3>Clube de Vantagens</h3>
+      <p>Descontos exclusivos em parceiros nacionais</p>
+    </a>
+    <a href="#residencial" class="hero-card">
+      <span class="hero-card-icon"></span>
+      <h3>Assistência Residencial</h3>
+      <p>Suporte emergencial para o seu lar</p>
+    </a>
+    <a href="#medicamentos" class="hero-card">
+      <span class="hero-card-icon"></span>
+      <h3>Auxílio Medicamentos</h3>
+      <p>Reembolso em medicamentos genéricos</p>
+    </a>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- CLUBE DE VANTAGENS -->
+<!-- ============================= -->
+<section id="clube">
+  <div class="container">
+    <div class="service-block">
+      <div class="service-visual">
+        <span class="service-visual-icon"></span>
+        <h2>Clube de Vantagens</h2>
+        <p>Uma plataforma digital com acesso a uma ampla rede de parceiros com descontos exclusivos em farmácias, academias, educação, alimentação, lazer e muito mais.</p>
+        <div class="tag-row">
+          <span class="tag">Farmácias</span>
+          <span class="tag">Academias</span>
+          <span class="tag">Educação</span>
+          <span class="tag">Alimentação</span>
+          <span class="tag">Lazer</span>
+          <span class="tag">Lar Doce Lar</span>
+          <span class="tag gold">Cobertura Nacional</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-label">Serviço 01</p>
+        <h2 class="section-title">Como funciona</h2>
+        <p class="section-desc">Acesse a plataforma com seu CPF, navegue pelos parceiros, escolha a oferta e utilize o cupom diretamente no site do parceiro.</p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-label">Portal de Acesso</div>
+            <div class="info-card-value">
+            <a href="https://meuclubedevantagens.com.br" target="_blank">
+              meuclubedevantagens.com.br
+            </a>
+          </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Login</div>
+            <div class="info-card-value">CPF + senha cadastrada</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Carência</div>
+            <div class="info-card-value">72h úteis</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Limite de uso</div>
+            <div class="info-card-value">Ilimitado</div>
+          </div>
+        </div>
+
+        <h3 style="font-weight:600; font-size:1rem; color:var(--verde); margin:1.75rem 0 1rem;">Passo a passo para usar</h3>
+        <ul class="step-list">
+          <li><p>Acesse <strong>www.meuclubedevantagens.com.br</strong> e clique em "Entrar" → "Cadastre-se" para criar sua conta.</p></li>
+          <li><p>Confirme o cadastro pelo link enviado ao seu e-mail.</p></li>
+          <li><p>Faça login com seu CPF e senha e navegue pelos segmentos de parceiros.</p></li>
+          <li><p>Selecione a oferta, copie o cupom e finalize a compra no site do parceiro com o desconto já aplicado.</p></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h3>Dúvidas frequentes — Clube de Vantagens</h3>
+      <div class="faq-item">
+        <div class="faq-q">Preciso pagar para usar as vantagens?</div>
+        <div class="faq-a">Não. O acesso ao Clube de Vantagens é um benefício gratuito incluso no seu plano. Você só paga pelo produto ou serviço no parceiro, já com o desconto aplicado.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Posso usar o benefício quantas vezes quiser?</div>
+        <div class="faq-a">Sim. O uso é ilimitado, desde que respeitadas as regras específicas de cada parceiro (como validade do cupom e limites por CPF).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Os descontos são válidos em todo o Brasil?</div>
+        <div class="faq-a">Sim. O clube possui abrangência nacional. Você pode filtrar por cidade, estado ou tipo de serviço para encontrar ofertas disponíveis onde estiver.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= -->
+<!-- ASSISTÊNCIA RESIDENCIAL -->
+<!-- ============================= -->
+<section id="residencial" style="background: var(--cinza);">
+  <div class="container">
+    <div class="service-block reverse">
+      <div>
+        <p class="section-label">Serviço 02</p>
+        <h2 class="section-title">Assistência Residencial</h2>
+        <p class="section-desc">Suporte emergencial 24h para o seu lar, com cobertura nacional. Profissionais qualificados para resolver imprevistos rapidamente.</p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-label">Canal de Acionamento</div>
+            <div class="info-card-value">WhatsApp 0800 591 4604</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Carência</div>
+            <div class="info-card-value">30 dias após adesão</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Limite geral</div>
+            <div class="info-card-value">2 usos / 12 meses por serviço</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Cobertura</div>
+            <div class="info-card-value">Todo o território nacional</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-visual">
+        <span class="service-visual-icon"></span>
+        <h2>Assistência Residencial</h2>
+        <p>Solução completa para emergências no seu lar. Da fechadura ao eletrodoméstico, a Vitale Assist cuida do que você precisa.</p>
+        <div class="tag-row">
+          <span class="tag">Chaveiro</span>
+          <span class="tag">Encanador</span>
+          <span class="tag">Eletricista</span>
+          <span class="tag">Vidraceiro</span>
+          <span class="tag">Linha Branca</span>
+          <span class="tag">Linha Marrom</span>
+          <span class="tag gold">Nacional 24h</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVIÇOS DETALHADOS -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--verde); margin-bottom:1.5rem; font-weight:700;">Serviços cobertos</h3>
+    <div class="detail-grid">
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <div class="detail-icon">🔑</div>
+          <h4>Chaveiro</h4>
+        </div>
+        <p>Cobre arrombamento, perda, quebra de chave na fechadura, roubo ou furto e travamento que impeça o acesso ou saída da residência.</p>
+        <span class="limit-badge">Limite: 2× / 12 meses • R$ 250,00</span>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <div class="detail-icon">🔧</div>
+          <h4>Encanador</h4>
+        </div>
+        <p>Vazamentos em tubulações aparentes em PVC (1 a 4 pol.), torneiras, sifões, chuveiros, válvulas de descarga e registros. Inclui desentupimento de ramais internos.</p>
+        <ul class="exclusao-list">
+          <li>Quebra de parede, teto ou piso</li>
+          <li>Eventos da natureza / enchentes</li>
+          <li>Tubulações de cobre, aço ou ferro</li>
+          <li>Material e andaime</li>
+        </ul>
+        <span class="limit-badge">Limite: 2× / 12 meses • R$ 250,00</span>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <div class="detail-icon">⚡</div>
+          <h4>Eletricista</h4>
+        </div>
+        <p>Tomadas queimadas, interruptores defeituosos, disjuntores e fusíveis danificados, troca de chuveiros ou resistências que possam causar curto-circuito.</p>
+        <ul class="exclusao-list">
+          <li>Troca ou instalação de fiação</li>
+          <li>Portão elétrico, alarme, interfone</li>
+          <li>Material e andaime</li>
+        </ul>
+        <span class="limit-badge">Limite: 2× / 12 meses • R$ 250,00</span>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <div class="detail-icon">🪟</div>
+          <h4>Vidraceiro</h4>
+        </div>
+        <p>Quebra de vidros de portas ou janelas externas. Material básico de reposição incluso (vidro transparente liso, canelado ou martelado, até 4mm). Caso impossível, fornece tapume.</p>
+        <ul class="exclusao-list">
+          <li>Vidros coloridos, fumês ou temperados</li>
+          <li>Questões estéticas da residência</li>
+        </ul>
+        <span class="limit-badge">Limite: 2× / 12 meses • R$ 300,00</span>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <div class="detail-icon">🧰</div>
+          <h4>Linha Branca</h4>
+        </div>
+        <p>Reparo (mão de obra) de defeito técnico em: fogão a gás, geladeira, freezer, lavadora de louças, micro-ondas, lavadora e secadora de roupas. Equipamentos com até 6 anos.</p>
+        <span class="limit-badge">Limite: 2× / 12 meses • R$ 300,00</span>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <div class="detail-icon">📺</div>
+          <h4>Linha Marrom</h4>
+        </div>
+        <p>Reparo (mão de obra) de defeito técnico em: televisores, home theater, aparelhos de som, DVD player e Blu-ray player. Equipamentos com até 6 anos de uso.</p>
+        <span class="limit-badge">Limite: 2× / 12 meses • R$ 300,00</span>
+      </div>
+    </div>
+
+    <div class="faq-section" style="margin-top:3rem;">
+      <h3>Dúvidas frequentes — Assistência Residencial</h3>
+      <div class="faq-item">
+        <div class="faq-q">Como solicito a assistência?</div>
+        <div class="faq-a">Entre em contato pelo WhatsApp 0800 591 4604. Informe seus dados e o serviço desejado. Um atendente confirmará a cobertura, abrirá o chamado e informará o prazo e profissional responsável.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O serviço cobre todo o Brasil?</div>
+        <div class="faq-a">Sim. A cobertura é nacional, independentemente da sua localização, desde que todos os requisitos do contrato sejam atendidos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O que acontece após o serviço?</div>
+        <div class="faq-a">Após a conclusão, você assina a ordem de serviço confirmando a finalização do atendimento.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================= -->
+<!-- AUXÍLIO MEDICAMENTOS -->
+<!-- ============================= -->
+<section id="medicamentos">
+  <div class="container">
+    <div class="service-block">
+      <div class="service-visual">
+        <span class="service-visual-icon"></span>
+        <h2>Auxílio Medicamentos</h2>
+        <p>Reembolso de até R$100,00 em medicamentos genéricos adquiridos em farmácias de sua escolha em qualquer região do Brasil. Processo 100% digital via WhatsApp.</p>
+        <div class="tag-row">
+          <span class="tag">Somente genéricos</span>
+          <span class="tag">Reembolso via PIX</span>
+          <span class="tag">100% digital</span>
+          <span class="tag gold">Até R$ 100,00</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-label">Serviço 03</p>
+        <h2 class="section-title">Como solicitar</h2>
+        <p class="section-desc">O processo é simples e totalmente pelo WhatsApp. Você envia os documentos e o reembolso chega via PIX em até 7 dias úteis após aprovação.</p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-label">Canal</div>
+            <div class="info-card-value">WhatsApp 0800 591 4604</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Carência</div>
+            <div class="info-card-value">30 dias após adesão</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Limite de uso</div>
+            <div class="info-card-value">1× a cada 2 meses</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Valor máximo</div>
+            <div class="info-card-value">R$ 100,00 por solicitação</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Análise</div>
+            <div class="info-card-value">Até 48h úteis</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Pagamento (PIX)</div>
+            <div class="info-card-value">Até 7 dias úteis (aprovação)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETAPAS -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--verde); margin-bottom:1.5rem; font-weight:700;">Processo de reembolso – 5 etapas</h3>
+    <div class="detail-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px,1fr));">
+      <div class="detail-card" style="border-top: 3px solid var(--verde);">
+        <div class="detail-card-header">
+          <div class="detail-icon" style="background:var(--verde);color:var(--branco);font-size:0.9rem;font-weight:700;">1</div>
+          <h4>Contato Inicial</h4>
+        </div>
+        <p>Acesse o WhatsApp 0800 591 4604 e escolha a opção "Auxílio Medicamento".</p>
+      </div>
+      <div class="detail-card" style="border-top: 3px solid var(--verde);">
+        <div class="detail-card-header">
+          <div class="detail-icon" style="background:var(--verde);color:var(--branco);font-size:0.9rem;font-weight:700;">2</div>
+          <h4>Aprovação das Regras</h4>
+        </div>
+        <p>Confirme as regras de resgate: nota fiscal com genérico especificado, receita médica assinada, prazo de 30 dias da compra.</p>
+      </div>
+      <div class="detail-card" style="border-top: 3px solid var(--verde);">
+        <div class="detail-card-header">
+          <div class="detail-icon" style="background:var(--verde);color:var(--branco);font-size:0.9rem;font-weight:700;">3</div>
+          <h4>Envio de Documentos</h4>
+        </div>
+        <p>Foto da receita (com CRM e CID), foto da caixa do medicamento, nota fiscal e chave PIX.</p>
+      </div>
+      <div class="detail-card" style="border-top: 3px solid var(--verde);">
+        <div class="detail-card-header">
+          <div class="detail-icon" style="background:var(--verde);color:var(--branco);font-size:0.9rem;font-weight:700;">4</div>
+          <h4>Aguardar Análise</h4>
+        </div>
+        <p>A equipe da Vitale Assist terá até 48h úteis para analisar os documentos.</p>
+      </div>
+      <div class="detail-card" style="border-top: 3px solid var(--dourado);">
+        <div class="detail-card-header">
+          <div class="detail-icon" style="background:var(--dourado);color:var(--branco);font-size:0.9rem;font-weight:700;">5</div>
+          <h4>Recebimento do PIX</h4>
+        </div>
+        <p>Se aprovado: código de identificação + valor autorizado. Pagamento em até 7 dias úteis via PIX.</p>
+      </div>
+    </div>
+
+    <div class="faq-section" style="margin-top:3rem;">
+      <h3>Dúvidas frequentes — Auxílio Medicamentos</h3>
+      <div class="faq-item">
+        <div class="faq-q">Medicamento acima de R$100,00 — recebo o reembolso total?</div>
+        <div class="faq-a">Não. O reembolso é limitado a R$100,00 por solicitação. Valores acima desse limite não são cobertos integralmente.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Medicamento não genérico tem direito ao reembolso?</div>
+        <div class="faq-a">Não. O benefício é exclusivo para medicamentos genéricos, devidamente especificados na nota fiscal.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Qual é o prazo máximo para solicitar o reembolso após a compra?</div>
+        <div class="faq-a">O prazo máximo é de 30 dias corridos após a data de compra. Após esse período, perde-se o direito ao reembolso.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O reembolso é feito na conta de quem?</div>
+        <div class="faq-a">O reembolso é realizado via PIX para a conta bancária do paciente que consta na nota fiscal. Em caso de menor de idade, pode ser o responsável legal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="contact-section">
+  <div class="container">
+    <h2>Precisa de ajuda?</h2>
+    <p>Nossa equipe está pronta para atender você de segunda a sexta, das 08h às 18h.</p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/08005914604" class="btn btn-gold">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2.027C6.486 2.027 1.988 6.525 1.988 12.088c0 1.893.521 3.662 1.426 5.178L2 22l4.854-1.388A10.03 10.03 0 0012.05 22.15c5.563 0 10.061-4.497 10.061-10.061S17.613 2.027 12.05 2.027zm0 18.407a8.337 8.337 0 01-4.253-1.162l-.305-.181-3.161.904.916-3.08-.197-.317a8.341 8.341 0 01-1.282-4.411c0-4.609 3.75-8.36 8.36-8.36 4.609 0 8.36 3.751 8.36 8.36-.001 4.609-3.752 8.247-8.438 8.247z"/></svg>
+        WhatsApp 0800 591 4604
+      </a>
+      <a href="https://www.meuclubedevantagens.com.br" target="_blank" class="btn btn-outline">
+        Acessar Clube de Vantagens ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 OuroBem Benefícios. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
